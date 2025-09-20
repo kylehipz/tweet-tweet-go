@@ -1,0 +1,98 @@
+services:
+  users-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=users
+    ports:
+      - 3001:3001
+    environment:
+      - PORT=3001
+    volumes:
+      - ../../:/app
+    container_name: users-service
+
+  posts-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=posts
+    ports:
+      - 3002:3002
+    environment:
+      - PORT=3002
+    volumes:
+      - ../../:/app
+    container_name: posts-service
+
+  follow-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=follow
+    ports:
+      - 3003:3003
+    environment:
+      - PORT=3003
+    volumes:
+      - ../../:/app
+    container_name: follow-service
+
+  timeline-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=timeline
+    ports:
+      - 3004:3004
+    environment:
+      - PORT=3004
+    volumes:
+      - ../../:/app
+    container_name: timeline-service
+
+  search-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=search
+    ports:
+      - 3005:3005
+    environment:
+      - PORT=3005
+    volumes:
+      - ../../:/app
+    container_name: search-service
+
+  notifications-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=notifications
+    ports:
+      - 3006:3006
+    environment:
+      - PORT=3006
+    volumes:
+      - ../../:/app
+    container_name: notifications-service
+
+  content-moderation-service:
+    build:
+      context: ../..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_SERVICE=content-moderation
+    ports:
+      - 3007:3007
+    environment:
+      - PORT=3007
+    volumes:
+      - ../../:/app
+    container_name: content-moderation-service

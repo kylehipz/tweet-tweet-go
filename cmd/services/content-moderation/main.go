@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"github.com/kylehipz/tweet-tweet-go/config"
+	"github.com/kylehipz/tweet-tweet-go/pkg/server"
+	"github.com/labstack/echo/v4"
+)
+
 
 func main() {
-	fmt.Println("HELLO WORLD")
+	settings := config.GetSettings()
+
+	apiServer := server.NewApiServer(echo.New(), settings["port"])
+
+	apiServer.RegisterNotificationRoutes()
+
+	apiServer.Start()
 }
+

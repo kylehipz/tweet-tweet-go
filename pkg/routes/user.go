@@ -8,7 +8,7 @@ import (
 
 func GetProfileHandler(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]string{
-			"message": "hello world",
+			"message": "hello world!",
 		})
 }
 
